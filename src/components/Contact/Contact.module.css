@@ -58,11 +58,25 @@
         align-items: center;
     }
 
+    .text h2 {
+        font-size: 50px;
+        font-weight: 700;
+        letter-spacing: 4px;
+    }
+
     .links {
         align-items: center;
     }
 
+    .link a {
+        color: var(--color-text);
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+    }
+
     .text p {
-        font-size: 30px;
+        font-size: 25px;
     }
 }
