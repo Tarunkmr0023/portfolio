@@ -1,6 +1,7 @@
 
 # Portfolio Website
-Portfolio website built in React
+Portfolio website built in React.
+
 A website built to showcase my technical skills, web design skills.
 
 ## Technologies Used
@@ -16,8 +17,9 @@ A website built to showcase my technical skills, web design skills.
 # Setup Guide
 1. Open the project in Visual Studio Code.
 2. Go to toolbar --> terminal --> Open new terminal.
-3. Run "npm install" and "npm install -g nodemon" .
-4. Now to run the project --> Run "nodemon app.js" on terminal.
+3. Run "npm install".
+4. Run "npm run dev".
+5. Open "http://localhost:5173/" in any web browser, and you will see website is up and running.
 
 # Screenshots
 
