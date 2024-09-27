@@ -1,0 +1,23 @@
+[
+    {
+      "title": "Bank Account Management",
+      "imageSrc": "projects/bankapp.png",
+      "description": "Spring Boot microservices for a complete bank account system, covering customer and account management, using MySQL database.",
+      "skills": ["Java", "Spring Boot", "REST", "Microservice"],
+      "source": "https://github.com/Tarunkmr0023/microservice-account-management"
+    },
+    {
+      "title": "Result Management System",
+      "imageSrc": "projects/resultapp.png",
+      "description": "A result management system with HTML, CSS, JavaScript, and Node.js following the MVC model, implemented user authentication.",
+      "skills": ["HTML", "CSS", "JavaScript",  "Node"],
+      "source": "https://github.com/Tarunkmr0023/Result_Management_System"
+    },
+    {
+      "title": "Covileer",
+      "imageSrc": "projects/covileer.png",
+      "description": "Covileer is a web based application which provides the volunteer services related to delivery to Covid affected/quarantined people, and needy people.",
+      "skills": ["HTML", "CSS", "Python", "Django"],
+      "source": "https://github.com/Tarunkmr0023/Covileer"
+    }
+  ]

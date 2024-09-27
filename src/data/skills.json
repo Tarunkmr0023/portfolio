@@ -1,0 +1,58 @@
+[
+    {
+      "title": "Java",
+      "imageSrc": "skills/java.png"
+    },
+    {
+      "title": "Spring",
+      "imageSrc": "skills/spring.png"
+    },
+    {
+      "title": "SpringBoot",
+      "imageSrc": "skills/springboot.png"
+    },
+    {
+      "title": "React",
+      "imageSrc": "skills/react.png"
+    },
+    {
+      "title": "AWS",
+      "imageSrc": "skills/aws.png"
+    },
+    {
+      "title": "MySQL",
+      "imageSrc": "skills/mysql.png"
+    },
+    {
+      "title": "MongoDB",
+      "imageSrc": "skills/mongodb.png"
+    },
+    {
+      "title": "DSA",
+      "imageSrc": "skills/dsa.png"
+    },
+    {
+      "title": "DBMS",
+      "imageSrc": "skills/dbms.png"
+    },
+    {
+      "title": "OOPS",
+      "imageSrc": "skills/oops.png"
+    },
+    {
+      "title": "REST",
+      "imageSrc": "skills/rest.png"
+    },
+    {
+      "title": "Microservice",
+      "imageSrc": "skills/microservice.png"
+    },
+    {
+      "title": "Git",
+      "imageSrc": "skills/git.png"
+    },
+    {
+      "title": "Jira",
+      "imageSrc": "skills/jira.png"
+    }
+  ]

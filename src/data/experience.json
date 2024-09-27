@@ -1,0 +1,38 @@
+[
+    {
+      "role": "Engineer",
+      "organisation": "Nagarro",
+      "startDate": "Jul, 2022",
+      "endDate": "Present",
+      "tasks": [
+        "Implemented CRUD API in Java Spring Boot Lambda with Amazon DynamoDB",
+        "Implemented custom validation service for new banks for Payment Payable Platform",
+        "Implemented Togglz admin console for Java Togglz feature integration"
+    ],
+      "imageSrc": "history/nagarro.png"
+    },
+    {
+      "role": "Trainee",
+      "organisation": "Cognizant",
+      "startDate": "Jan, 2022",
+      "endDate": "Jun, 2022",
+      "tasks": [
+        "Completed six-month training program in Java full-stack engineering", 
+        "Acquired practical skills in Java, Spring, and Spring Boot",
+        "Gained knowledge in Java, MySQL, Spring, and Spring Boot"
+    ],
+      "imageSrc": "history/cognizant.png"
+    },
+    {
+      "role": "Web Development Intern",
+      "organisation": "Carikture",
+      "startDate": "Jun, 2021",
+      "endDate": "Aug, 2021",
+      "tasks": [
+        "Participated in web development projects",
+        "Hands-on experience in both frontend and backend development",
+        "Gained proficiency in debugging JavaScript code"
+      ],
+      "imageSrc": "history/carikture.png"
+    }
+  ]
