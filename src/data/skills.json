@@ -54,5 +54,17 @@
     {
       "title": "Jira",
       "imageSrc": "skills/jira.png"
+    },
+    {
+      "title": "Jenkins",
+      "imageSrc": "skills/jenkins.png"
+    },
+    {
+      "title": "Kafka",
+      "imageSrc": "skills/kafka.png"
+    },
+    {
+      "title": "Docker",
+      "imageSrc": "skills/docker.png"
     }
   ]

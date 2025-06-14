@@ -11,6 +11,10 @@ export const Contact = () => {
         <p>Feel free to reach out!</p>
       </div>
       <ul className={styles.links}>
+          <li className={styles.link}>
+                    <img src={getImageUrl("contact/phone.png")} alt="Phone icon" />
+                    <a href="tel:+918467030023" target="_blank">+91-8467030023</a>
+                  </li>
         <li className={styles.link}>
           <img src={getImageUrl("contact/emailIcon.png")} alt="Email icon" />
           <a href="mailto:tarunkmr0023@gmail.com" target="_blank">tarunkmr0023@gmail.com</a>

@@ -1,13 +1,13 @@
 [
     {
-      "role": "Engineer",
+      "role": "Senior Engineer",
       "organisation": "Nagarro",
       "startDate": "Jul, 2022",
       "endDate": "Present",
       "tasks": [
-        "Implemented CRUD API in Java Spring Boot Lambda with Amazon DynamoDB",
-        "Implemented custom validation service for new banks for Payment Payable Platform",
-        "Implemented Togglz admin console for Java Togglz feature integration"
+        "Designed and implemented hiring automation system with Java, Spring Boot & MongoDB",
+        "Integrated CV Parsing, SHL & CIBIL APIs to automate and enhance recruitment workflows",
+        "Enabled real-time processing with Kafka event streaming"
     ],
       "imageSrc": "history/nagarro.png"
     },
