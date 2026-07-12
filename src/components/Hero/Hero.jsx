@@ -8,7 +8,7 @@ export const Hero = () => {
         <div className={styles.content}>
             <h1 className={styles.title}>Hi, I'm Tarun</h1>
             <p className={styles.description}>
-                I'm a full-stack developer with 3+ years of experience using Java, Spring, Spring Boot, React, AWS, MySQL and MongoDB. Reach out if you'd like to learn more!
+                I'm a full-stack developer with 4+ years of experience using Java, Spring, Spring Boot, React, AWS, MySQL and MongoDB. Reach out if you'd like to learn more!
             </p>
             <a href="mailto:tarunkmr0023@gmail.com" className={styles.contactBtn} >
                 Contact Me
