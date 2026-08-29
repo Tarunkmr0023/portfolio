@@ -1,11 +1,39 @@
 :root {
-    /* Colors */
-    --color-text: #fff;
-    --color-primary: #576cbc;
-    --color-secondary: #19376d;
-    --color-dark: #0b2447;
-    --color-bg: #04152d;
+  /* Colors - Black/Lime Engineering Theme */
+  --color-bg: #050505;
+  --color-surface: #0b0b0b;
+  --color-surface-light: #111111;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.15);
 
-    /* Fonts */
-    --font-roboto: "Roboto"
+  --text-primary: #f5f5f5;
+  --text-secondary: #8a8a8a;
+  --text-muted: #4f4f4f;
+
+  --accent: #b7ff3c;
+  --accent-soft: rgba(183, 255, 60, 0.12);
+  --accent-glow: rgba(183, 255, 60, 0.4);
+
+  /* Fonts */
+  --font-mono: "DM Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
+  --space-2xl: 96px;
+
+  /* Transitions */
+  --transition-fast: 200ms ease;
+  --transition-base: 400ms ease;
+  --transition-slow: 700ms ease;
+
+  /* Z-index layers */
+  --z-bg: 0;
+  --z-content: 10;
+  --z-nav: 100;
+  --z-modal: 200;
 }
