@@ -5,9 +5,9 @@
       "startDate": "Jul, 2022",
       "endDate": "Present",
       "tasks": [
-        "Designed and implemented hiring automation system with Java, Spring Boot & MongoDB",
-        "Integrated CV Parsing, SHL & CIBIL APIs to automate and enhance recruitment workflows",
-        "Enabled real-time processing with Kafka event streaming"
+        "Developed and enhanced scalable Java and Spring Boot microservices across banking, hiring automation, and payments platforms, leveraging REST APIs, MongoDB, MySQL, and AWS services",
+        "Integrated third-party financial and recruitment APIs, including MasterCard, TransUnion, Experian, Equifax, CV Parsing, SHL, and CIBIL, automating workflows and improving verification and processing efficiency",
+        "Implemented event-driven processing with Apache Kafka, optimized real-time credit decisioning and data mapping, containerized services using Docker, and enhanced React frontend functionality"
     ],
       "imageSrc": "history/nagarro.png"
     },

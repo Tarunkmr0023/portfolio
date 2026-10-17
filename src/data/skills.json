@@ -66,5 +66,21 @@
     {
       "title": "Docker",
       "imageSrc": "skills/docker.png"
+    },
+    {
+      "title": "Svelte",
+      "imageSrc": "skills/svelte.png"
+    },
+    {
+      "title": "SvelteKit",
+      "imageSrc": "skills/sveltekit.png"
+    },
+    {
+      "title": "TypeScript",
+      "imageSrc": "skills/typescript.png"
+    },
+    {
+      "title": "Tailwind CSS",
+      "imageSrc": "skills/tailwind.png"
     }
   ]

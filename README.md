@@ -1,50 +1,167 @@
+# Tarun Kumar — Developer Portfolio
 
-# Portfolio Website
-Portfolio website built in React.
+A personal developer portfolio built with React, TypeScript, Vite, and Three.js. It showcases my technical skills, professional experience, selected projects, and contact information through a dark, minimal interface with lime-green accents and an interactive 3D workstation.
 
-A website built to showcase my technical skills, web design skills.
+## Features
 
-## Technologies Used
-* HTML5
-* CSS3
-* JavaScript (ES6)
-* Git
-* GitHub
-* React
-* Node JS
-* Vite
+- **3D Hero Experience:** A workstation scene built with Three.js and React Three Fiber.
+- **About Section:** Professional introduction, experience statistics, and technical strengths.
+- **Experience Timeline:** Professional roles and related details.
+- **Project Showcase:** Selected projects with descriptions and screenshots.
+- **Skills Overview:** Technologies and tools organized in a structured layout.
+- **Contact Section:** Contact information and relevant profile links.
+- **Responsive Layout:** Designed for desktop and mobile screens.
+- **Motion and Interactions:** Animated interface elements and interactive navigation.
 
-# Setup Guide
-1. Open the project in Visual Studio Code.
-2. Go to toolbar --> terminal --> Open new terminal.
-3. Run "npm install".
-4. Run "npm run dev".
-5. Open "http://localhost:5173/" in any web browser, and you will see website is up and running.
+## Tech Stack
 
-# Screenshots
+### Frontend
 
-## Desktop Version
-![App Screenshot](https://github.com/Tarunkmr0023/portfolio/blob/main/Screenshots/Home.png?raw=true)
+- React 19
+- TypeScript
+- HTML5
+- CSS3 and CSS Modules
 
-![App Screenshot](https://github.com/Tarunkmr0023/portfolio/blob/main/Screenshots/About.png?raw=true)
+### 3D and Animation
 
-![App Screenshot](https://github.com/Tarunkmr0023/portfolio/blob/main/Screenshots/Skills_Experience.png?raw=true)
+- Three.js
+- React Three Fiber
+- React Three Drei
+- GSAP
 
-![App Screenshot](https://github.com/Tarunkmr0023/portfolio/blob/main/Screenshots/Projects.png?raw=true)
+### Development Tools
 
-![App Screenshot](https://github.com/Tarunkmr0023/portfolio/blob/main/Screenshots/Contact.png?raw=true)
+- Vite
+- ESLint
+- npm
+- Git and GitHub
 
-## Mobile Version
-![App Screenshot](https://github.com/Tarunkmr0023/portfolio/blob/main/Screenshots/Home_mobile.png?raw=true)
+### Content Management
 
-![App Screenshot](https://github.com/Tarunkmr0023/portfolio/blob/main/Screenshots/Menu_list_mobile.png?raw=true)
+Portfolio content is organized in JSON files under `src/data/`, including profile information, skills, professional experience, and projects.
 
-![App Screenshot](https://github.com/Tarunkmr0023/portfolio/blob/main/Screenshots/About_mobile.png?raw=true)
+## Project Structure
 
-![App Screenshot](https://github.com/Tarunkmr0023/portfolio/blob/main/Screenshots/Skills_mobile.png?raw=true)
+```text
+portfolio/
+├── public/                  # Static assets
+├── src/
+│   ├── components/
+│   │   ├── About/
+│   │   ├── Contact/
+│   │   ├── Experience/
+│   │   ├── Navbar/
+│   │   ├── Projects/
+│   │   ├── sections/
+│   │   └── three/
+│   ├── data/
+│   │   ├── experience.json
+│   │   ├── profile.json
+│   │   ├── projects.json
+│   │   └── skills.json
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── vars.css
+├── package.json
+├── package-lock.json
+├── index.html
+└── README.md
+```
 
-![App Screenshot](https://github.com/Tarunkmr0023/portfolio/blob/main/Screenshots/Experience_mobile.png?raw=true)
+## Getting Started
 
-![App Screenshot](https://github.com/Tarunkmr0023/portfolio/blob/main/Screenshots/Projects_mobile.png?raw=true)
+### Prerequisites
 
-![App Screenshot](https://github.com/Tarunkmr0023/portfolio/blob/main/Screenshots/Contact_mobile.png?raw=true)
+- Node.js and npm
+- Git (optional, for cloning the repository)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Tarunkmr0023/portfolio.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd portfolio
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL printed by Vite, usually:
+
+   `http://localhost:5173/`
+
+## Available Commands
+
+| Command           | Description                         |
+| ----------------- | ----------------------------------- |
+| `npm run dev`     | Starts the local development server |
+| `npm run lint`    | Runs ESLint checks                  |
+| `npm run build`   | Creates the production build        |
+| `npm run preview` | Serves the production build locally |
+
+## Updating Portfolio Content
+
+Most portfolio content can be updated in the JSON files under `src/data/`:
+
+- `profile.json` — Profile details and introduction.
+- `experience.json` — Professional experience entries.
+- `projects.json` — Project information.
+- `skills.json` — Skills and technologies.
+
+The About section's displayed statistics are maintained in the About component. Update those values when the underlying information changes.
+
+## Screenshots
+
+Existing screenshots are available in the repository's `Screenshots/` directory, if present.
+
+You can add updated screenshots of the current portfolio here as the design evolves.
+
+## Production Build
+
+Create a production build:
+
+```bash
+npm run lint
+npm run build
+```
+
+To test the generated build locally:
+
+```bash
+npm run preview
+```
+
+Use the local URL printed by Vite to inspect the production version before deployment.
+
+## Deployment
+
+This project uses Vite and generates production files in the `dist/` directory.
+
+Deploy the contents of `dist/` to a static hosting provider that supports single-page React applications. Configure the hosting provider to serve `index.html` for application routes if required by the chosen deployment setup.
+
+## Author
+
+**Tarun Kumar**
+
+- GitHub: [Tarunkmr0023](https://github.com/Tarunkmr0023)
+- Portfolio repository: [portfolio](https://github.com/Tarunkmr0023/portfolio)
+
+---
+
+Built with React, TypeScript, and Three.js.
