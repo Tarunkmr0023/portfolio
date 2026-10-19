@@ -1,3 +1,4 @@
+
 import { useRef, useEffect } from "react";
 import projects from "../../data/projects.json";
 import { ProjectShowcase } from "./ProjectShowcase";
@@ -28,10 +29,14 @@ export function Projects() {
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
-    const elements = [sectionRef.current, headerRef.current, listRef.current].filter(
-      (el): el is Element => el !== null
-    );
+    const elements = [
+      sectionRef.current,
+      headerRef.current,
+      listRef.current,
+    ].filter((el): el is Element => el !== null);
+
     elements.forEach((el) => observer.observe(el));
+
     return () => elements.forEach((el) => observer.unobserve(el));
   }, []);
 
@@ -39,11 +44,20 @@ export function Projects() {
     <section id="projects" className={styles.section} ref={sectionRef}>
       <div className={styles.container}>
         <header className={styles.header} ref={headerRef}>
-          <span className={styles.eyebrow}>03 / SELECTED WORK</span>
-          <h2 className={styles.title}>THINGS I'VE<br /><span>BUILT.</span></h2>
+          <span className={styles.eyebrow}>04 / SELECTED WORK</span>
+          <h2 className={styles.title}>
+            THINGS I'VE
+            <br />
+            <span>BUILT.</span>
+          </h2>
         </header>
 
-        <div className={styles.showcaseList} ref={listRef} role="list" aria-label="Projects">
+        <div
+          className={styles.showcaseList}
+          ref={listRef}
+          role="list"
+          aria-label="Projects"
+        >
           {projects.map((project: Project, idx) => (
             <ProjectShowcase
               key={project.title}

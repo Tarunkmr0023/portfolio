@@ -1,12 +1,13 @@
 # Tarun Kumar — Developer Portfolio
 
-A personal developer portfolio built with React, TypeScript, Vite, and Three.js. It showcases my technical skills, professional experience, selected projects, and contact information through a dark, minimal interface with lime-green accents and an interactive 3D workstation.
+A personal developer portfolio built with React, TypeScript, Vite, and Three.js. It showcases my technical skills, professional experience, selected projects, recognition, and contact information through a dark, minimal interface with lime-green accents and an interactive 3D workstation.
 
 ## Features
 
 - **3D Hero Experience:** A workstation scene built with Three.js and React Three Fiber.
 - **About Section:** Professional introduction, experience statistics, and technical strengths.
 - **Experience Timeline:** Professional roles and related details.
+- **Recognition & Awards:** Awards, nominations, and client appreciation displayed from a JSON data file, with optional certificate links.
 - **Project Showcase:** Selected projects with descriptions and screenshots.
 - **Skills Overview:** Technologies and tools organized in a structured layout.
 - **Contact Section:** Contact information and relevant profile links.
@@ -38,7 +39,7 @@ A personal developer portfolio built with React, TypeScript, Vite, and Three.js.
 
 ### Content Management
 
-Portfolio content is organized in JSON files under `src/data/`, including profile information, skills, professional experience, and projects.
+Portfolio content is organized in JSON files under `src/data/`, including profile information, skills, professional experience, projects, and recognition entries.
 
 ## Project Structure
 
@@ -52,12 +53,14 @@ portfolio/
 │   │   ├── Experience/
 │   │   ├── Navbar/
 │   │   ├── Projects/
+│   │   ├── RecognitionAwards/
 │   │   ├── sections/
 │   │   └── three/
 │   ├── data/
 │   │   ├── experience.json
 │   │   ├── profile.json
 │   │   ├── projects.json
+│   │   ├── recognition.json
 │   │   └── skills.json
 │   ├── App.tsx
 │   ├── index.css
@@ -122,15 +125,30 @@ Most portfolio content can be updated in the JSON files under `src/data/`:
 - `profile.json` — Profile details and introduction.
 - `experience.json` — Professional experience entries.
 - `projects.json` — Project information.
+- `recognition.json` — Awards, nominations, and other recognition entries.
 - `skills.json` — Skills and technologies.
 
+### Adding an Award or Recognition
+
+Add a new object to `src/data/recognition.json`. Each entry should have a unique `id`, a `title`, an `organisation`, a `date`, and a `description`. The `number` field can be used to set the displayed number manually; if omitted, the component generates a number based on the entry's position.
+
+To show a certificate link, include `certificateUrl` and optionally `certificateLabel`. For example:
+
+```json
+{
+  "id": "new-award-2027",
+  "title": "Award Name",
+  "organisation": "Issuing Organisation",
+  "date": "JAN 2027",
+  "description": "A brief description of the recognition.",
+  "certificateUrl": "/assets/awards/award-certificate.pdf",
+  "certificateLabel": "VIEW CERTIFICATE"
+}
+```
+
+Place public certificate PDFs in `public/assets/awards/`; files in this directory are served from the matching `/assets/awards/` URL. Certificate fields are optional, so an entry without a certificate link will still display normally.
+
 The About section's displayed statistics are maintained in the About component. Update those values when the underlying information changes.
-
-## Screenshots
-
-Existing screenshots are available in the repository's `Screenshots/` directory, if present.
-
-You can add updated screenshots of the current portfolio here as the design evolves.
 
 ## Production Build
 

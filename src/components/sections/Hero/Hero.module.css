@@ -46,6 +46,8 @@
   position: relative;
   z-index: 3;
   width: min(610px, 54%);
+  flex-shrink: 0;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -178,10 +180,20 @@
 }
 
 .metrics {
+  position: relative;
+  z-index: 4;
   display: flex;
   align-items: center;
-  gap: clamp(15px, 2vw, 28px);
+  flex-wrap: wrap;
+  gap: clamp(12px, 1.5vw, 22px);
   margin-top: clamp(38px, 6vh, 62px);
+}
+
+@media (min-width: 769px) {
+  .metrics {
+    position: relative;
+    z-index: 4;
+  }
 }
 
 .metric {
@@ -215,7 +227,7 @@
   z-index: 1;
   top: 7%;
   right: 0;
-  width: 58%;
+  width: 54%;
   height: 84%;
   min-height: 520px;
   pointer-events: none;

@@ -89,7 +89,7 @@ export function Contact() {
     <section id="contact" className={styles.section} ref={sectionRef}>
       <div className={styles.container}>
         <header className={styles.header} ref={headerRef}>
-          <span className={styles.eyebrow}>04 / CONNECTION</span>
+          <span className={styles.eyebrow}>05 / CONNECTION</span>
           <h2 className={styles.title}>
             LET'S BUILD<br />
             <span>SOMETHING USEFUL.</span>
