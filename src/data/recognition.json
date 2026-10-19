@@ -1,0 +1,21 @@
+
+[
+  {
+    "id": "brightest-mind-2026",
+    "number": "01",
+    "title": "The Brightest Mind",
+    "organisation": "Nagarro · Excellence Awards",
+    "date": "SEP 2026",
+    "description": "Recognized for my contributions and performance.",
+    "certificateUrl": "/assets/awards/the-brightest-mind-nagarro-2026.jpg",
+    "certificateLabel": "VIEW CERTIFICATE"
+  },
+  {
+    "id": "client-appreciation-cheerboard",
+    "number": "02",
+    "title": "Client Appreciation & Nagarro Cheerboard",
+    "organisation": "Nagarro",
+    "date": "3 NOMINATIONS",
+    "description": "Received client appreciation for my contributions and was nominated for the Nagarro Cheerboard three times in recognition of my work and impact."
+  }
+]

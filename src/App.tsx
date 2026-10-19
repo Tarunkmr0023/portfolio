@@ -1,3 +1,4 @@
+import { RecognitionAwards } from "./components/RecognitionAwards/RecognitionAwards";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Hero } from "./components/sections/Hero/Hero";
 import { About } from "./components/About/About";
@@ -47,8 +48,10 @@ function App() {
         <SectionDivider label="SYSTEM / 002" />
         <Experience />
         <SectionDivider label="SYSTEM / 003" />
-        <Projects />
+        <RecognitionAwards />
         <SectionDivider label="SYSTEM / 004" />
+        <Projects />
+        <SectionDivider label="SYSTEM / 005" />
         <Contact />
       </main>
       <footer className={styles.footer} role="contentinfo">

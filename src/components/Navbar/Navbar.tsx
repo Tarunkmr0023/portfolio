@@ -9,8 +9,9 @@ interface NavSection {
 const sections: NavSection[] = [
   { id: "about", label: "01 ABOUT" },
   { id: "experience", label: "02 EXPERIENCE" },
-  { id: "projects", label: "03 PROJECTS" },
-  { id: "contact", label: "04 CONTACT" },
+  { id: "recognition", label: "03 RECOGNITION" },
+  { id: "projects", label: "04 PROJECTS" },
+  { id: "contact", label: "05 CONTACT" },
 ];
 
 export function Navbar() {
