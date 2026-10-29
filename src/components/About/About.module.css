@@ -321,9 +321,15 @@
   }
 
   .imageWrapper {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 1 / 1;
     max-width: 520px;
     margin: 0 auto;
+    opacity: 1;
+    transform: none;
+  }
+
+  .image {
+    object-position: center 20%;
   }
 
   .capabilities {

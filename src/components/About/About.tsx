@@ -81,10 +81,10 @@ export function About() {
         <div className={styles.grid}>
           <figure className={styles.imageWrapper} ref={imageRef}>
             <img
-              src={getImageUrl("about/aboutImage.png")}
+              src={getImageUrl("about/aboutImage.jpg")}
               alt="Tarun Kumar — Software Engineer at workstation"
               className={styles.image}
-              loading="lazy"
+              decoding="async"
             />
             <div className={styles.imageOverlay} aria-hidden="true" />
             <figcaption className={styles.imageCaption}>
