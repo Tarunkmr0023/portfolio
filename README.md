@@ -1,18 +1,26 @@
 # Tarun Kumar — Developer Portfolio
 
-A personal developer portfolio built with React, TypeScript, Vite, and Three.js. It showcases my technical skills, professional experience, selected projects, recognition, and contact information through a dark, minimal interface with lime-green accents and an interactive 3D workstation.
+A personal developer portfolio built with React, TypeScript, Vite, and Three.js. It showcases my technical skills, professional experience, selected projects, recognition, and contact information through a glassmorphism interface with an animated aurora background, dark and light themes, and an interactive 3D code-editor scene.
+
+Live site: [tarunkmr-portfolio.netlify.app](https://tarunkmr-portfolio.netlify.app)
 
 ## Features
 
-- **3D Hero Experience:** A workstation scene built with Three.js and React Three Fiber.
-- **About Section:** Professional introduction, experience statistics, and technical strengths.
-- **Experience Timeline:** Professional roles and related details.
+- **3D Hero Experience:** A floating code editor that types out a Spring controller with syntax colours, surrounded by orbiting skill tiles and code symbols, built with Three.js and React Three Fiber. It is lazy-loaded, recovers automatically from a lost WebGL context, and is skipped when the device prefers reduced motion.
+- **Glass Design System:** Shared glass tokens (blur, border, shadow, radius) in `src/vars.css` used by the navbar, cards, and panels, over a drifting aurora gradient background with a grain overlay.
+- **Floating Navbar:** A pill-shaped glass navbar that shrinks on scroll, with a command palette button and a theme toggle.
+- **Command Palette:** Press `Cmd/Ctrl + K` to jump to a section, copy the email address, open GitHub or LinkedIn, toggle the theme, or download the resume.
+- **Light and Dark Themes:** A theme toggle that is remembered between visits and applied before the first paint to avoid a flash.
+- **Scroll Progress Bar:** A thin gradient bar at the top of the page showing scroll position.
+- **About Section:** Professional introduction, experience statistics, technical strengths, and an education summary.
+- **Experience Timeline:** Nagarro roles split by project, plus earlier roles, with the current role expanded by default and a glass chip cloud for the tech stack.
 - **Recognition & Awards:** Awards, nominations, and client appreciation displayed from a JSON data file, with optional certificate links.
-- **Project Showcase:** Selected projects with descriptions and screenshots.
-- **Skills Overview:** Technologies and tools organized in a structured layout.
-- **Contact Section:** Contact information and relevant profile links.
+- **Project Showcase:** Selected projects with descriptions and screenshots, with an optional live demo link per project.
+- **Contact Section:** Glass contact cards for email, LinkedIn, and GitHub, plus a resume download button.
+- **Resume Download:** Serves `public/resume.pdf`.
+- **SEO and Sharing:** Meta description, Open Graph and Twitter tags with a social preview image, canonical URL, `robots.txt`, and `sitemap.xml`.
+- **Accessibility:** Skip-to-content link, visible focus rings, and reduced-motion support.
 - **Responsive Layout:** Designed for desktop and mobile screens.
-- **Motion and Interactions:** Animated interface elements and interactive navigation.
 
 ## Tech Stack
 
@@ -30,6 +38,11 @@ A personal developer portfolio built with React, TypeScript, Vite, and Three.js.
 - React Three Drei
 - GSAP
 
+### Typography
+
+- Space Grotesk (headings), Inter (body), and DM Mono (labels), loaded from Google Fonts
+- JetBrains Mono (3D code window), bundled via `@fontsource/jetbrains-mono`
+
 ### Development Tools
 
 - Vite
@@ -45,7 +58,7 @@ Portfolio content is organized in JSON files under `src/data/`, including profil
 
 ```text
 portfolio/
-├── public/                  # Static assets
+├── public/                  # Static assets (resume.pdf, og-image.png, robots.txt, sitemap.xml)
 ├── src/
 │   ├── components/
 │   │   ├── About/
@@ -55,7 +68,8 @@ portfolio/
 │   │   ├── Projects/
 │   │   ├── RecognitionAwards/
 │   │   ├── sections/
-│   │   └── three/
+│   │   ├── three/           # GlassScene (3D hero code editor)
+│   │   └── ui/              # CommandPalette, ScrollProgress
 │   ├── data/
 │   │   ├── experience.json
 │   │   ├── profile.json
@@ -65,7 +79,8 @@ portfolio/
 │   ├── App.tsx
 │   ├── index.css
 │   ├── main.tsx
-│   └── vars.css
+│   ├── theme.ts             # Light/dark theme helpers
+│   └── vars.css             # Colour, glass, and spacing tokens
 ├── package.json
 ├── package-lock.json
 ├── index.html
@@ -124,9 +139,14 @@ Most portfolio content can be updated in the JSON files under `src/data/`:
 
 - `profile.json` — Profile details and introduction.
 - `experience.json` — Professional experience entries.
-- `projects.json` — Project information.
+- `projects.json` — Project information. An optional `demo` field adds a "Live demo" button to a project.
 - `recognition.json` — Awards, nominations, and other recognition entries.
 - `skills.json` — Skills and technologies.
+
+### Resume and Social Image
+
+- Replace `public/resume.pdf` to update the downloadable resume. Keep the file name, because the Contact section and command palette link to `/resume.pdf`.
+- `public/og-image.png` (1200×630) is the link preview image referenced by the Open Graph and Twitter tags in `index.html`.
 
 ### Adding an Award or Recognition
 
@@ -148,7 +168,7 @@ To show a certificate link, include `certificateUrl` and optionally `certificate
 
 Place public certificate PDFs in `public/assets/awards/`; files in this directory are served from the matching `/assets/awards/` URL. Certificate fields are optional, so an entry without a certificate link will still display normally.
 
-The About section's displayed statistics are maintained in the About component. Update those values when the underlying information changes.
+The About section's displayed statistics are maintained in the About component, and the hero highlights are in the Hero component. Update those values when the underlying information changes.
 
 ## Production Build
 
@@ -172,6 +192,8 @@ Use the local URL printed by Vite to inspect the production version before deplo
 This project uses Vite and generates production files in the `dist/` directory.
 
 Deploy the contents of `dist/` to a static hosting provider that supports single-page React applications. Configure the hosting provider to serve `index.html` for application routes if required by the chosen deployment setup.
+
+The site is hosted on Netlify at `https://tarunkmr-portfolio.netlify.app`. The canonical URL, Open Graph image URLs, and `public/sitemap.xml` use this address, so update them if the domain changes.
 
 ## Author
 
