@@ -1,4 +1,6 @@
 import { useState, useEffect, MouseEvent } from "react";
+import { OPEN_PALETTE_EVENT } from "../ui/CommandPalette";
+import { getTheme, toggleTheme, THEME_EVENT, type Theme } from "../../theme";
 import styles from "./Navbar.module.css";
 
 interface NavSection {
@@ -18,6 +20,13 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("about");
+  const [theme, setTheme] = useState<Theme>(getTheme);
+
+  useEffect(() => {
+    const sync = () => setTheme(getTheme());
+    window.addEventListener(THEME_EVENT, sync);
+    return () => window.removeEventListener(THEME_EVENT, sync);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,9 +75,7 @@ export function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""} ${menuOpen ? styles.menuOpen : ""}`}>
       <div className={styles.brand}>
         <a href="#" className={styles.logo} onClick={handleLogoClick}>
-          <span className={styles.logoText}>TK.</span>
-          <span className={styles.statusDot} aria-hidden="true" />
-          <span className={styles.statusText}>SYSTEM ONLINE</span>
+          <span className={styles.logoText}>TK<span className={styles.logoDot}>.</span></span>
         </a>
       </div>
 
@@ -96,6 +103,24 @@ export function Navbar() {
           </li>
         ))}
       </ul>
+
+      <button
+        type="button"
+        className={styles.paletteBtn}
+        onClick={() => window.dispatchEvent(new Event(OPEN_PALETTE_EVENT))}
+        aria-label="Open command palette"
+      >
+        <kbd>⌘K</kbd>
+      </button>
+
+      <button
+        type="button"
+        className={styles.themeBtn}
+        onClick={toggleTheme}
+        aria-label={theme === "light" ? "Switch to dark theme" : "Switch to light theme"}
+      >
+        <span aria-hidden="true">{theme === "light" ? "☾" : "☀"}</span>
+      </button>
     </nav>
   );
 }

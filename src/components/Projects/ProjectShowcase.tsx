@@ -8,6 +8,7 @@ interface Project {
   description: string;
   skills: string[];
   source: string;
+  demo?: string;
 }
 
 interface ProjectShowcaseProps {
@@ -51,7 +52,7 @@ export function ProjectShowcase({
   index,
   total,
 }: ProjectShowcaseProps) {
-  const { title, imageSrc, description, skills, source } = project;
+  const { title, imageSrc, description, skills, source, demo } = project;
 
   const showcaseRef = useRef<HTMLElement>(null);
   const isEven = index % 2 === 0;
@@ -127,20 +128,36 @@ export function ProjectShowcase({
             </ul>
           )}
 
-          {source && (
+          {(demo || source) && (
             <div className={styles.actions}>
-              <a
-                href={source}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.sourceLink}
-                aria-label={`View source for ${title} (opens in a new tab)`}
-              >
-                <span>VIEW SOURCE</span>
-                <span className={styles.arrow} aria-hidden="true">
-                  ↗
-                </span>
-              </a>
+              {demo && (
+                <a
+                  href={demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.sourceLink}
+                  aria-label={`Open live demo of ${title} (opens in a new tab)`}
+                >
+                  <span>Live demo</span>
+                  <span className={styles.arrow} aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              )}
+              {source && (
+                <a
+                  href={source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.sourceLink}
+                  aria-label={`View source for ${title} (opens in a new tab)`}
+                >
+                  <span>View source</span>
+                  <span className={styles.arrow} aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              )}
             </div>
           )}
         </div>
@@ -155,7 +172,7 @@ export function ProjectShowcase({
           />
           <div className={styles.gridOverlay} aria-hidden="true" />
           <figcaption className={styles.imageCaption}>
-            <span>PROJECT PREVIEW</span>
+            <span>{title}</span>
             <span>{number} / {String(total).padStart(2, "0")}</span>
           </figcaption>
         </figure>

@@ -16,24 +16,24 @@ interface Stat {
 
 const capabilities: Capability[] = [
   {
-    category: "FULL-STACK ENGINEERING",
-    items: ["React / TypeScript", "Node.js / Express", "Spring / Spring Boot", "REST / GraphQL", "HTML5 / CSS3 / JS"],
+    category: "Full-stack",
+    items: ["React", "Spring Boot / Spring JPA", "Spring Security", "RESTful APIs", "Hibernate"],
   },
   {
-    category: "BACKEND & SYSTEMS",
-    items: ["Java / JVM Ecosystem", "Microservices Architecture", "Kafka Event Streaming", "MongoDB / MySQL", "Docker / Kubernetes"],
+    category: "Backend and systems",
+    items: ["Java", "Microservices / Spring Cloud", "Kafka event streaming", "MongoDB / MySQL / DynamoDB", "AWS Lambda"],
   },
   {
-    category: "ENGINEERING MINDSET",
-    items: ["System Design & Scalability", "Clean Code / DDD / TDD", "CI/CD / Jenkins", "AWS Cloud Infrastructure", "Problem Decomposition"],
+    category: "DevOps and quality",
+    items: ["Docker / Kubernetes", "Jenkins CI/CD", "Grafana / Rancher / Nginx", "JUnit / Mockito", "SonarQube"],
   },
 ];
 
 const stats: Stat[] = [
-  { value: "4+", label: "YEARS EXPERIENCE" },
-  { value: "3", label: "COMPANIES" },
-  { value: "20+", label: "TECHNOLOGIES" },
-  { value: "10+", label: "PROJECTS SHIPPED" },
+  { value: "4+", label: "years of experience" },
+  { value: "3", label: "companies" },
+  { value: "20+", label: "technologies" },
+  { value: "20+", label: "projects delivered" },
 ];
 
 export function About() {
@@ -71,25 +71,25 @@ export function About() {
     <section id="about" className={styles.section} ref={sectionRef}>
       <div className={styles.container}>
         <header className={styles.header} ref={headerRef}>
-          <span className={styles.eyebrow}>01 / ENGINEERING PROFILE</span>
+          <span className={styles.eyebrow}>About me</span>
           <h2 className={styles.title}>
-            BUILT TO SOLVE<br />
-            <span>COMPLEX PROBLEMS.</span>
+            I like problems<br />
+            <span>with moving parts.</span>
           </h2>
         </header>
 
         <div className={styles.grid}>
           <figure className={styles.imageWrapper} ref={imageRef}>
             <img
-              src={getImageUrl("about/aboutImage.png")}
+              src={getImageUrl("about/aboutImage.jpg")}
               alt="Tarun Kumar — Software Engineer at workstation"
               className={styles.image}
-              loading="lazy"
+              decoding="async"
             />
             <div className={styles.imageOverlay} aria-hidden="true" />
             <figcaption className={styles.imageCaption}>
-              <span>PORTRAIT / 001</span>
-              <span>ENGINEERING PROFILE</span>
+              <span>Tarun Kumar</span>
+              <span>Software Engineer</span>
             </figcaption>
           </figure>
 
@@ -115,6 +115,12 @@ export function About() {
             </div>
 
             <p className={styles.philosophy}>{profile.description}</p>
+
+            <p className={styles.education}>
+              <span className={styles.educationLabel}>Education</span>
+              B.Tech in Computer Science Engineering, Bharati Vidyapeeth’s College of
+              Engineering, New Delhi (2018–2022)
+            </p>
 
             <dl className={styles.stats} ref={statsRef} role="list">
               {stats.map((stat, idx) => (

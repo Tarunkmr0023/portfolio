@@ -1,6 +1,10 @@
 @import "../../vars.css";
 
 .card {
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-glass);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -138,7 +142,7 @@
 
 .projectTitle {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: 22px;
   font-weight: 700;
   line-height: 1.2;

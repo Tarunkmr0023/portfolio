@@ -44,11 +44,11 @@ export function Projects() {
     <section id="projects" className={styles.section} ref={sectionRef}>
       <div className={styles.container}>
         <header className={styles.header} ref={headerRef}>
-          <span className={styles.eyebrow}>04 / SELECTED WORK</span>
+          <span className={styles.eyebrow}>Selected work</span>
           <h2 className={styles.title}>
-            THINGS I'VE
+            Things I've
             <br />
-            <span>BUILT.</span>
+            <span>built.</span>
           </h2>
         </header>
 

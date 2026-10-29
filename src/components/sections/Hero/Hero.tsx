@@ -1,29 +1,33 @@
 
-import { HeroScene } from "../../three/HeroScene/HeroScene";
-import profile from "../../../data/profile.json";
+import { lazy, Suspense } from "react";
 import styles from "./Hero.module.css";
+
+const GlassScene = lazy(() =>
+  import("../../three/HeroScene/GlassScene").then((m) => ({ default: m.GlassScene }))
+);
+
+const show3D =
+  typeof window !== "undefined" &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 export function Hero() {
   return (
     <section id="hero" className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.content}>
         <div className={styles.eyebrow}>
-          <span className={styles.status} aria-hidden="true" />
-          <span>SYSTEM ONLINE</span>
-          <span className={styles.eyebrowLine} aria-hidden="true" />
-          <span className={styles.eyebrowMeta}>JAVA / CLOUD / SYSTEMS</span>
+          <span className={styles.eyebrowMeta}>Software Engineer at Nagarro</span>
         </div>
 
-        <p className={styles.intro}>HELLO, I'M</p>
-
         <h1 id="hero-title" className={styles.name}>
-          TARUN
+          Tarun
           <br />
-          <span>KUMAR</span>
+          <span>Kumar</span>
         </h1>
 
-        <p className={styles.title}>{profile.title}</p>
-        <p className={styles.description}>{profile.tagline}</p>
+        <p className={styles.description}>
+          I build the backend behind banking and payment products: Java, Spring Boot and
+          Kafka services that make credit decisions in real time.
+        </p>
 
         <div className={styles.actions}>
           <a
@@ -37,7 +41,7 @@ export function Hero() {
               });
             }}
           >
-            <span>EXPLORE MY WORK</span>
+            <span>See what I've built</span>
             <span className={styles.ctaArrow} aria-hidden="true">
               ↗
             </span>
@@ -54,49 +58,44 @@ export function Hero() {
               });
             }}
           >
-            MORE ABOUT ME <span aria-hidden="true">↓</span>
+            More about me <span aria-hidden="true">↓</span>
           </a>
         </div>
 
-        <div className={styles.metrics} aria-label="Areas of focus">
+        <div className={`${styles.metrics} ${styles.glassPanel}`} aria-label="Highlights">
           <div className={styles.metric}>
-            <span className={styles.metricValue}>01</span>
-            <span className={styles.metricLabel}>BACKEND SYSTEMS</span>
+            <span className={styles.metricValue}>4+</span>
+            <span className={styles.metricLabel}>years of experience</span>
           </div>
 
           <span className={styles.metricDivider} aria-hidden="true" />
 
           <div className={styles.metric}>
-            <span className={styles.metricValue}>02</span>
-            <span className={styles.metricLabel}>CLOUD ENGINEERING</span>
+            <span className={styles.metricValue}>20+</span>
+            <span className={styles.metricLabel}>projects delivered</span>
           </div>
 
           <span className={styles.metricDivider} aria-hidden="true" />
 
           <div className={styles.metric}>
-            <span className={styles.metricValue}>03</span>
-            <span className={styles.metricLabel}>FULL-STACK APPS</span>
+            <span className={styles.metricValue}>20+</span>
+            <span className={styles.metricLabel}>technologies used</span>
           </div>
         </div>
       </div>
 
       <div className={styles.scene} aria-hidden="true">
-        <div className={styles.sceneLabel}>
-          <span className={styles.sceneLabelDot} />
-          LIVE SYSTEM MAP
-        </div>
-
-        <HeroScene />
-
-        <div className={styles.sceneIndex}>
-          FIG. 01 / ENGINEERING ECOSYSTEM
-        </div>
+        {show3D && (
+          <Suspense fallback={null}>
+            <GlassScene />
+          </Suspense>
+        )}
       </div>
 
       <div className={styles.footer}>
-        <span>© 2026 TARUN KUMAR</span>
+        <span>© 2026 Tarun Kumar</span>
         <span className={styles.footerCenter}>
-          DESIGNED WITH PRECISION
+          Java · Spring Boot · Kafka · AWS
         </span>
 
         <a
@@ -110,7 +109,7 @@ export function Hero() {
             });
           }}
         >
-          SCROLL TO EXPLORE <span aria-hidden="true">↓</span>
+          Scroll <span aria-hidden="true">↓</span>
         </a>
       </div>
     </section>
