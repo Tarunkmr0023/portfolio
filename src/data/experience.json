@@ -1,14 +1,38 @@
 [
     {
-      "role": "Associate Staff Engineer",
+      "role": "SDE · Digital Consumer & SMB Banking",
       "organisation": "Nagarro",
-      "startDate": "Jul, 2022",
+      "startDate": "Apr, 2025",
       "endDate": "Present",
       "tasks": [
-        "Developed and enhanced scalable Java and Spring Boot microservices across banking, hiring automation, and payments platforms, leveraging REST APIs, MongoDB, MySQL, and AWS services",
-        "Integrated third-party financial and recruitment APIs, including MasterCard, TransUnion, Experian, Equifax, CV Parsing, SHL, and CIBIL, automating workflows and improving verification and processing efficiency",
-        "Implemented event-driven processing with Apache Kafka, optimized real-time credit decisioning and data mapping, containerized services using Docker, and enhanced React frontend functionality"
-    ],
+        "Working on a U.S.-based banking project offering credit cards, term loans, unsecured loans and deposit accounts for small businesses and consumers",
+        "Enhanced third-party integrations including MasterCard (webhooks, V2 upgrades, credential updates) and internal financial data systems for income verification and real-time credit decisioning, reducing verification turnaround time by 35%",
+        "Implemented configurable multi-bureau support (TransUnion, Experian, Equifax) and standardized key-mapping, reducing data discrepancies by 15% and improving credit processing efficiency by 10%"
+      ],
+      "imageSrc": "history/nagarro.png"
+    },
+    {
+      "role": "SDE · Hiring Automation",
+      "organisation": "Nagarro",
+      "startDate": "Jun, 2024",
+      "endDate": "Mar, 2025",
+      "tasks": [
+        "Designed a microservices-based hiring automation system using Java, Spring Boot and MongoDB, with modular services for the recruitment process",
+        "Integrated CV Parsing for automated resume extraction, SHL test triggers for assessment scheduling and the Cibil API for credit score verification, improving recruitment efficiency by 70%",
+        "Built event-driven communication with Apache Kafka for candidate status updates, test results and application tracking, reducing processing delays by 50%"
+      ],
+      "imageSrc": "history/nagarro.png"
+    },
+    {
+      "role": "SDE · Payments Payables Platform",
+      "organisation": "Nagarro",
+      "startDate": "Jul, 2022",
+      "endDate": "May, 2024",
+      "tasks": [
+        "Developed and optimized CRUD APIs in Java Spring Boot Lambda with Amazon DynamoDB for routing information, reducing processing time by 20%",
+        "Containerized Spring Boot microservices with Docker using multi-stage builds, externalized configs and securely passed secrets for reproducible deployments",
+        "Fixed bugs and improved the UI in the React frontend, aligning it better with backend functionality"
+      ],
       "imageSrc": "history/nagarro.png"
     },
     {

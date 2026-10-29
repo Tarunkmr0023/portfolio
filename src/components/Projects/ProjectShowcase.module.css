@@ -109,7 +109,7 @@
   max-width: 600px;
   margin: 0;
   color: var(--text-primary);
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: clamp(28px, 2.6vw, 40px);
   font-weight: 800;
   line-height: 1.12;
@@ -450,4 +450,36 @@
   .sourceLink:hover .arrow {
     transform: none;
   }
+}
+/* Glass treatment */
+.content {
+  padding: clamp(20px, 2.5vw, 32px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-glass);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+.imageWrapper {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-glass);
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.category,
+.skillTag,
+.sourceLink {
+  border-radius: 999px;
+}
+
+.category {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.indexLabel,
+.divider {
+  display: none;
 }

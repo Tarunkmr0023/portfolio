@@ -2,14 +2,14 @@
     {
       "title": "Bank Account Management",
       "imageSrc": "projects/bankapp.png",
-      "description": "Spring Boot microservices for a complete bank account system, covering customer and account management, using MySQL database.",
-      "skills": ["Java", "Spring Boot", "REST", "Microservice"],
+      "description": "Spring Boot microservices banking system for customer and account management, with Eureka for service discovery, an API Gateway, a central Configuration Server and MySQL storage.",
+      "skills": ["Java", "Spring Boot", "Spring Cloud", "MySQL", "Microservice"],
       "source": "https://github.com/Tarunkmr0023/microservice-account-management"
     },
     {
       "title": "Result Management System",
       "imageSrc": "projects/resultapp.png",
-      "description": "A result management system with HTML, CSS, JavaScript, and Node.js following the MVC model, implemented user authentication.",
+      "description": "Result management system built with Node.js, HTML, CSS and JavaScript on the MVC pattern. Teachers and students sign in separately, and teachers can create, update and delete student results.",
       "skills": ["HTML", "CSS", "JavaScript",  "Node"],
       "source": "https://github.com/Tarunkmr0023/Result_Management_System"
     },

@@ -47,7 +47,7 @@
 
 .title {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: clamp(42px, 5vw, 68px);
   font-weight: 800;
   line-height: 1.04;
@@ -293,6 +293,10 @@
 }
 
 .cardContent {
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-glass);
   width: 100%;
   min-width: 0;
   padding: clamp(16px, 2vw, 24px);
@@ -1003,4 +1007,85 @@
   .expandBtn {
     transition: none;
   }
+}
+
+/* Glass chip cloud for the stack */
+.title {
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.title span {
+  background: linear-gradient(100deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.eyebrow {
+  padding: 6px 14px;
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  letter-spacing: 0.06em;
+  text-transform: none;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.stack {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-glass);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+.stackTitle,
+.stackCount {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.stackTitle {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.techList {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techNumber,
+.techIndicator {
+  display: none;
+}
+
+.techItem {
+  min-height: 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--glass-border);
+  transform: translateY(6px);
+}
+
+.techItem.visible {
+  transform: translateY(0);
+}
+
+.techName {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+.techItem:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }

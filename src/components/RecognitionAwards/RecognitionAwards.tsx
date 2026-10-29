@@ -44,17 +44,16 @@ export function RecognitionAwards() {
     >
       <div className={styles.container}>
         <header className={styles.header} ref={headerRef}>
-          <span className={styles.eyebrow}>03 / RECOGNITION</span>
+          <span className={styles.eyebrow}>Recognition</span>
 
           <h2 className={styles.title} id="recognition-title">
-            WORK THAT
+            Work that
             <br />
-            <span>MADE AN IMPACT.</span>
+            <span>got noticed.</span>
           </h2>
 
           <p className={styles.intro}>
-            A few milestones that recognize the contributions, collaboration,
-            and impact behind the work.
+            Recognition from clients and colleagues at Nagarro.
           </p>
         </header>
 
@@ -87,13 +86,9 @@ export function RecognitionAwards() {
                     rel="noopener noreferrer"
                     aria-label={`View ${award.title} certificate (opens in a new tab)`}
                   >
-                    {award.certificateLabel || "VIEW CERTIFICATE"}{" "}
+                    {award.certificateLabel || "View certificate"}{" "}
                     <span aria-hidden="true">↗</span>
                   </a>
-
-                  <span className={styles.verifiedLabel}>
-                    AWARD CERTIFICATE
-                  </span>
                 </div>
               )}
             </article>

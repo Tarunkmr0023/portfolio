@@ -14,7 +14,7 @@ interface ExperienceItem {
   imageSrc: string;
 }
 
-const techStack = skillsData.map((skill) => skill.title.toUpperCase());
+const techStack = skillsData.map((skill) => skill.title);
 
 interface TechStackProps {
   ref: Ref<HTMLAsideElement>;
@@ -57,9 +57,9 @@ const TechStack = ({ ref }: TechStackProps) => {
       aria-label="Technology stack"
     >
       <header className={styles.stackHeader}>
-        <span className={styles.stackTitle}>CORE STACK</span>
+        <span className={styles.stackTitle}>What I work with</span>
         <span className={styles.stackCount}>
-          {techStack.length} TECHNOLOGIES
+          {techStack.length} tools
         </span>
       </header>
 
@@ -76,9 +76,6 @@ const TechStack = ({ ref }: TechStackProps) => {
                 { transitionDelay: `${idx * 25}ms` } as CSSProperties
               }
             >
-              <span className={styles.techNumber}>
-                {String(idx + 1).padStart(2, "0")}
-              </span>
               <span className={styles.techName}>{tech}</span>
               <span className={styles.techIndicator} aria-hidden="true" />
             </li>
@@ -94,7 +91,7 @@ interface ExperienceTimelineProps {
 }
 
 const ExperienceTimeline = ({ ref }: ExperienceTimelineProps) => {
-  const [expanded, setExpanded] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState<number | null>(0);
 
   return (
     <div
@@ -141,7 +138,7 @@ const ExperienceTimeline = ({ ref }: ExperienceTimelineProps) => {
                     <p className={styles.role}>{exp.role}</p>
                     <p className={styles.company}>{exp.organisation}</p>
                     {idx === 0 && (
-                      <span className={styles.currentLabel}>CURRENT</span>
+                      <span className={styles.currentLabel}>Current</span>
                     )}
                   </div>
                 </div>
@@ -163,7 +160,7 @@ const ExperienceTimeline = ({ ref }: ExperienceTimelineProps) => {
                 aria-controls={tasksId}
               >
                 <span className={styles.expandText}>
-                  {isExpanded ? "COLLAPSE DETAILS" : "VIEW RESPONSIBILITIES"}
+                  {isExpanded ? "Hide details" : "What I did"}
                 </span>
                 <span className={styles.expandIcon} aria-hidden="true">
                   {isExpanded ? "−" : "+"}
@@ -235,11 +232,11 @@ export function Experience() {
     <section id="experience" className={styles.section} ref={sectionRef}>
       <div className={styles.container}>
         <header className={styles.header} ref={headerRef}>
-          <span className={styles.eyebrow}>02 / EXPERIENCE + STACK</span>
+          <span className={styles.eyebrow}>Experience</span>
           <h2 className={styles.title}>
-            THE SYSTEMS
+            Where I've
             <br />
-            <span>BEHIND THE WORK.</span>
+            <span>been building.</span>
           </h2>
         </header>
 

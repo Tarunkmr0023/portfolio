@@ -35,7 +35,6 @@ export function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
-  const [cursorVisible, setCursorVisible] = useState(true);
   const [copied, setCopied] = useState<string | null>(null);
 
   useEffect(() => {
@@ -60,14 +59,6 @@ export function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setCursorVisible((visible) => !visible);
-    }, 530);
-
-    return () => window.clearInterval(interval);
-  }, []);
-
   const copyToClipboard = (text: string, label: string) => {
     navigator.clipboard
       .writeText(text)
@@ -89,84 +80,44 @@ export function Contact() {
     <section id="contact" className={styles.section} ref={sectionRef}>
       <div className={styles.container}>
         <header className={styles.header} ref={headerRef}>
-          <span className={styles.eyebrow}>05 / CONNECTION</span>
+          <span className={styles.eyebrow}>Contact</span>
           <h2 className={styles.title}>
-            LET'S BUILD<br />
-            <span>SOMETHING USEFUL.</span>
+            Let's build<br />
+            <span>something useful.</span>
           </h2>
         </header>
 
-        <div className={styles.terminalWrapper} ref={terminalRef}>
-          <div className={styles.terminal}>
-            <header className={styles.terminalHeader}>
-              <div className={styles.windowControls}>
-                <span className={styles.control} aria-hidden="true" />
-                <span className={styles.control} aria-hidden="true" />
-                <span className={styles.control} aria-hidden="true" />
-              </div>
-
-              <div className={styles.terminalTitle}>
-                <span className={styles.promptIcon} aria-hidden="true">
-                  {contacts[0].icon}
-                </span>
-                <span className={styles.username}>contact@tarun</span>
-                <span className={styles.separator}>~</span>
-                <span className={styles.status}>ONLINE</span>
-              </div>
-            </header>
-
-            <div className={styles.terminalBody}>
-              <div className={styles.commandLine}>
-                <span className={styles.prompt}>$</span>
-                <span className={styles.command}> ./connect --with-tarun</span>
-              </div>
-
-              <div className={styles.output} role="list" aria-label="Contact methods">
-                {contacts.map((contact, idx) => (
-                  <div
-                    key={contact.label}
-                    className={styles.contactRow}
-                    style={{ transitionDelay: `${idx * 80}ms` } as HTMLAttributes<HTMLDivElement>["style"]}
-                    role="listitem"
-                  >
-                    <span className={styles.contactIcon} aria-hidden="true">
-                      {contact.icon}
-                    </span>
-
-                    <span className={styles.contactLabel}>{contact.label}</span>
-
-                    <a
-                      href={contact.href}
-                      target={contact.label === "EMAIL" ? undefined : "_blank"}
-                      rel={contact.label === "EMAIL" ? undefined : "noopener noreferrer"}
-                      className={styles.contactValue}
-                      onClick={() => handleContactClick(contact)}
-                    >
-                      {contact.value}
-                      <span
-                        className={`${styles.copyIcon} ${copied === contact.label ? styles.copied : ""}`}
-                        aria-hidden="true"
-                      >
-                        {copied === contact.label ? "✓" : "↗"}
-                      </span>
-                    </a>
-                  </div>
-                ))}
-              </div>
-
-              <div className={styles.readyLine}>
-                <span className={styles.prompt}>$</span>
-                <span className={styles.readyText}> ready when you are</span>
-                <span
-                  className={`${styles.cursor} ${cursorVisible ? styles.cursorVisible : ""}`}
-                  aria-hidden="true"
-                >
-                  _
-                </span>
-              </div>
-            </div>
-          </div>
+        <div className={styles.cards} ref={terminalRef} role="list" aria-label="Contact methods">
+          {contacts.map((contact, idx) => (
+            <a
+              key={contact.label}
+              role="listitem"
+              href={contact.href}
+              target={contact.label === "EMAIL" ? undefined : "_blank"}
+              rel={contact.label === "EMAIL" ? undefined : "noopener noreferrer"}
+              className={styles.card}
+              style={{ transitionDelay: `${idx * 90}ms` } as HTMLAttributes<HTMLAnchorElement>["style"]}
+              onClick={() => handleContactClick(contact)}
+            >
+              <span className={styles.cardIcon} aria-hidden="true">
+                {contact.icon}
+              </span>
+              <span className={styles.cardLabel}>{contact.label}</span>
+              <span className={styles.cardValue}>{contact.value}</span>
+              <span className={styles.cardAction} aria-live="polite">
+                {contact.label === "EMAIL"
+                  ? "Send an email"
+                  : copied === contact.label
+                    ? "Copied to clipboard"
+                    : "Open and copy link"}
+              </span>
+            </a>
+          ))}
         </div>
+
+        <a className={styles.resume} href="/resume.pdf" download>
+          Download resume <span aria-hidden="true">↓</span>
+        </a>
       </div>
     </section>
   );
